@@ -21,6 +21,20 @@ class TvShowsController < ApplicationController
     @tvshow = TvShow.find(params[:id])
   end
 
+  def edit
+    @tvshow = TvShow.find(params[:id])
+  end
+
+  def update
+    @tvshow = TvShow.find(params[:id])
+    if @tvshow.update(tvshow_params)
+      flash[:notice] = "TV Show successfully updated."
+      redirect_to tv_show_path(@tvshow)
+    else
+      render :edit
+    end
+  end
+
   private
   def tvshow_params
     params.require(:tv_show).permit(:title, :genre)
