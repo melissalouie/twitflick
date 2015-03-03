@@ -19,4 +19,4 @@ class SessionsController < ApplicationController
     session.clear
     redirect_to root_path, notice: "We're sorry to see you go!"
   end
-endgi
+end
