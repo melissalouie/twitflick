@@ -1,4 +1,5 @@
 <h1>TV Show Reviews</h1>
+<%= link_to 'Create Review', new_tv_show_tv_show_review_path %>
 <% @tvshowreviews.each do |tvshowreview| %>
 <%= tvshowreview.review %>
 <%= tvshowreview.rating %>

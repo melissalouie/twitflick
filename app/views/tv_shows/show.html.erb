@@ -2,3 +2,4 @@
 <%= @tvshow.genre %>
 <%= link_to 'Edit', edit_tv_show_path(@tvshow) %>
 <%= link_to 'Delete', tv_show_path(@tvshow), method: :delete %>
+<%= link_to 'Create Review', new_tv_show_tv_show_review_path(@tvshow) %>
