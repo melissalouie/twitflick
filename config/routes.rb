@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root 'tv_shows#index'
+  root 'welcome#index'
 
   resources :tv_shows do
     resources :tv_show_reviews
