@@ -1,6 +1,6 @@
 class CreateTvshows < ActiveRecord::Migration
   def change
-    create_table :tvshows do |t|
+    create_table :tv_shows do |t|
       t.string :title
       t.string :genre
     end

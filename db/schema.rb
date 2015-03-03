@@ -16,18 +16,18 @@ ActiveRecord::Schema.define(version: 20150303201828) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "tvshowreviews", force: :cascade do |t|
-    t.integer "tvshow_id"
+  create_table "tv_show_reviews", force: :cascade do |t|
+    t.integer "tv_show_id"
     t.string  "review"
     t.integer "rating"
   end
 
-  add_index "tvshowreviews", ["tvshow_id"], name: "index_tvshowreviews_on_tvshow_id", using: :btree
+  add_index "tv_show_reviews", ["tv_show_id"], name: "index_tv_show_reviews_on_tv_show_id", using: :btree
 
-  create_table "tvshows", force: :cascade do |t|
+  create_table "tv_shows", force: :cascade do |t|
     t.string "title"
     t.string "genre"
   end
 
-  add_foreign_key "tvshowreviews", "tvshows"
+  add_foreign_key "tv_show_reviews", "tv_shows"
 end
