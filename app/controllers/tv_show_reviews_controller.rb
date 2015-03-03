@@ -43,6 +43,13 @@ class TvShowReviewsController < ApplicationController
     end
   end
 
+  def destroy
+    @tvshow = TvShow.find(params[:tv_show_id])
+    @tvshowreview = TvShowReview.find(params[:id])
+    @tvshowreview.destroy
+    redirect_to tv_show_tv_show_reviews_path(@tvshow)
+  end
+
   private
   def tvshowreview_params
     params.require(:tv_show_review).permit(:review, :rating)

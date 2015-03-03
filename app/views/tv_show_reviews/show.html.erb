@@ -1,3 +1,4 @@
 <%= @tvshowreview.review %>
 <%= @tvshowreview.rating %>
 <%= link_to 'Edit', edit_tv_show_tv_show_review_path(@tvshow, @tvshowreview) %>
+<%= link_to 'Delete', tv_show_tv_show_review_path(@tvshow, @tvshowreview), method: :delete %>

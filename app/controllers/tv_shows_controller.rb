@@ -19,6 +19,7 @@ class TvShowsController < ApplicationController
 
   def show
     @tvshow = TvShow.find(params[:id])
+    @tvshowreviews = @tvshow.tv_show_reviews
   end
 
   def edit
