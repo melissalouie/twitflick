@@ -1,4 +1,6 @@
 class TvShowsController < ApplicationController
+  before_action :authenticate, except: [:index, :show]
+
   def index
     @tvshows = TvShow.all
   end
