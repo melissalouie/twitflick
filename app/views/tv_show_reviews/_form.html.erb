@@ -1,0 +1,7 @@
+<%= form_for [@tvshow, @tvshowreview] do |f| %>
+  <%= f.label :review %>
+  <%= f.text_field :review %>
+  <%= f.label :rating %>
+  <%= f.number_field :rating %>
+  <%= f.submit %>
+<% end %>
