@@ -17,8 +17,12 @@ class TvShowsController < ApplicationController
     end
   end
 
+  def show
+    @tvshow = TvShow.find(params[:id])
+  end
+
   private
   def tvshow_params
-    params.permit(:tv_show).require(:title, :genre)
+    params.require(:tv_show).permit(:title, :genre)
   end
 end

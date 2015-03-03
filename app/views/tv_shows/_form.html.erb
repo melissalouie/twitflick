@@ -1,3 +1,7 @@
 <%= form_for(@tvshow) do |f| %>
   <%= f.label :title %>
+  <%= f.text_field :title %>
+  <%= f.label :genre %>
+  <%= f.text_field :genre %>
+  <%= f.submit 'Create TV Show' %>
 <% end %>
