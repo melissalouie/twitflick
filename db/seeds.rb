@@ -8,3 +8,4 @@
 
 TvShow.create(title: 'Game of Thrones', genre: 'Drama')
 TvShow.create(title: 'Mindy Project', genre: 'Comedy')
+TvShowReview.create(tv_show_id: 1, review: 'Really good show.', rating: 5)
