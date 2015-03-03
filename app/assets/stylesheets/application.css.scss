@@ -34,6 +34,15 @@ html {
   -webkit-text-size-adjust: 100%;
 }
 
+.panel-primary {
+  margin-top: 15px;
+  border-color: black !important;
+}
+
+.panel-primary > .panel-heading {
+  background-color: black !important;
+
+}
 #new-show {
   margin-top: 15px;
 }
