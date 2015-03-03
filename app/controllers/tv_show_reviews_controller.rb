@@ -27,6 +27,22 @@ class TvShowReviewsController < ApplicationController
     @tvshowreview = TvShowReview.find(params[:id])
   end
 
+  def edit
+    @tvshow = TvShow.find(params[:tv_show_id])
+    @tvshowreview = TvShowReview.find(params[:id])
+  end
+
+  def update
+    @tvshow = TvShow.find(params[:tv_show_id])
+    @tvshowreview = TvShowReview.find(params[:id])
+    @tvshowreview.tv_show_id = params[:tv_show_id]
+    if @tvshowreview.update(tvshowreview_params)
+      redirect_to tv_show_tv_show_review_path(@tvshow, @tvshowreview)
+    else
+      render :edit
+    end
+  end
+
   private
   def tvshowreview_params
     params.require(:tv_show_review).permit(:review, :rating)
