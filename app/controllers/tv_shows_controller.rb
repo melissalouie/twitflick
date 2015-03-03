@@ -35,6 +35,13 @@ class TvShowsController < ApplicationController
     end
   end
 
+  def destroy
+    @tvshow = TvShow.find(params[:id])
+    @tvshow.destroy
+    flash[:notice] = "TV Show successfully deleted."
+    redirect_to tv_shows_path
+  end
+
   private
   def tvshow_params
     params.require(:tv_show).permit(:title, :genre)
