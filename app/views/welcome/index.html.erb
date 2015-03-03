@@ -1,9 +1,28 @@
-<h1>Homepage</h1>
+<div class="col-md-4">
+<%= link_to 'New Show', new_tv_show_path, class: 'btn btn-default pull-right btn-sm', id: 'new-show' %>
 <h3>TV Shows</h3>
-<%= link_to 'Create Show', new_tv_show_path %>
-<% @tvshows.each do |tvshow| %>
-<%= link_to tvshow.title, tv_show_path(tvshow) %>
-<%= tvshow.genre %>
-<%= link_to 'Edit', edit_tv_show_path(tvshow) %>
-<%= link_to 'Delete', tv_show_path(tvshow), method: :delete %>
-<% end %>
+<!-- <table class="table table-hover">
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Genre</th>
+    </tr>
+  </thead>
+  </tbody>
+    <% @tvshows.each do |tvshow| %>
+      <tr>
+        <td><%= link_to tvshow.title, tv_show_path(tvshow) %></td>
+        <td><%= tvshow.genre %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table> -->
+<ul class="list-group">
+  <% @tvshows.each do |tvshow| %>
+  <li class="list-group-item">
+    <span class="badge">Reviews:<%= tvshow.tv_show_reviews.count %></span>
+    <%= link_to "#{tvshow.title} | #{tvshow.genre}", tv_show_path(tvshow) %>
+  </li>
+  <% end %>
+</ul>
+</div>
