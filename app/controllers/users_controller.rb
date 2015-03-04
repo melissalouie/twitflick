@@ -32,7 +32,7 @@ class UsersController < ApplicationController
   end
 
   def update
-    if current_user.id == @user.id
+    if current_user.id == @user.id || current_user.admin == true
       @user.update(user_params)
         redirect_to user_path(@user), notice: 'User was successfully updated.'
       else
