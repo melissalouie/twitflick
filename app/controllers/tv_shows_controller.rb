@@ -4,6 +4,7 @@ class TvShowsController < ApplicationController
 
   def index
     @tvshows = TvShow.all
+    @genres = Genre.all
   end
 
   def new
@@ -48,6 +49,6 @@ class TvShowsController < ApplicationController
 
   private
   def tvshow_params
-    params.require(:tv_show).permit(:title, :genre)
+    params.require(:tv_show).permit(:title, :genre_id)
   end
 end

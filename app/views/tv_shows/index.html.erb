@@ -9,7 +9,7 @@
       <% @tvshows.each do |tvshow| %>
       <li class="list-group-item">
         <span class="badge">Reviews: <%= tvshow.tv_show_reviews.count %></span>
-        <%= link_to "#{tvshow.title} | #{tvshow.genre}", tv_show_path(tvshow) %>
+        <%= link_to "#{tvshow.title}", tv_show_path(tvshow) %>
       </li>
       <% end %>
     </ul>
@@ -18,10 +18,10 @@
 <div class="col-md-4">
   <h3>by genre</h3>
     <ul class="list-group">
-      <% @tvshows.each do |tvshow| %>
+      <% @genres.each do |genre| %>
       <li class="list-group-item">
-        <span class="badge">Reviews: <%= tvshow.tv_show_reviews.count %></span>
-        <%= link_to "#{tvshow.title} | #{tvshow.genre}", tv_show_path(tvshow) %>
+        <span class="badge">Shows: <%= genre.tv_shows.count %></span>
+        <%= "#{genre.name}" %>
       </li>
       <% end %>
     </ul>

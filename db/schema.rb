@@ -11,10 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150304210903) do
+ActiveRecord::Schema.define(version: 20150304232450) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "genres", force: :cascade do |t|
+    t.string "name"
+  end
 
   create_table "tv_show_reviews", force: :cascade do |t|
     t.integer "tv_show_id"
@@ -26,8 +30,8 @@ ActiveRecord::Schema.define(version: 20150304210903) do
   add_index "tv_show_reviews", ["tv_show_id"], name: "index_tv_show_reviews_on_tv_show_id", using: :btree
 
   create_table "tv_shows", force: :cascade do |t|
-    t.string "title"
-    t.string "genre"
+    t.string  "title"
+    t.integer "genre_id"
   end
 
   create_table "users", force: :cascade do |t|

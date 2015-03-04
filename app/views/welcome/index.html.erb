@@ -5,7 +5,7 @@
       <% @tvshows.each do |tvshow| %>
       <li class="list-group-item">
         <span class="badge">Reviews: <%= tvshow.tv_show_reviews.count %></span>
-        <%= link_to "#{tvshow.title} | #{tvshow.genre}", tv_show_path(tvshow) %>
+        <%= link_to "#{tvshow.title} | #{tvshow.genre.name}", tv_show_path(tvshow) %>
       </li>
       <% end %>
     </ul>
