@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   end
 
   resources :users
+  get 'users/:id/add_like' => 'users#add_like', :as => 'add_like'
 
   get '/login' => 'sessions#new', as: :login
   post '/login' => 'sessions#create'

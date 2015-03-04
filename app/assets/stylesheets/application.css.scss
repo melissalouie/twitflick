@@ -44,7 +44,13 @@ html {
   background-color: black !important;
 
 }
+.panel-heading p {
+  margin: -3px 10.5px;
+}
 
+.fa.pull-right {
+  margin-left: 10px;
+}
 #avatar{
   height: 70px;
 }
