@@ -1,8 +1,28 @@
-<h1>TV Shows</h1>
-<%= link_to 'Create Show', new_tv_show_path %>
-<% @tvshows.each do |tvshow| %>
-<%= tvshow.title %>
-<%= tvshow.genre %>
-<%= link_to 'Edit', edit_tv_show_path(tvshow) %>
-<%= link_to 'Delete', tv_show_path(tvshow), method: :delete %>
-<% end %>
+<div class="header">
+  <h1>TV Shows</h1>
+</div>
+<p><%= link_to 'New Show', new_tv_show_path, class: 'btn btn-default btn-small', id: 'new-show' %>
+
+<div class="col-md-4">
+  <h3>by show</h3>
+    <ul class="list-group">
+      <% @tvshows.each do |tvshow| %>
+      <li class="list-group-item">
+        <span class="badge">Reviews: <%= tvshow.tv_show_reviews.count %></span>
+        <%= link_to "#{tvshow.title} | #{tvshow.genre}", tv_show_path(tvshow) %>
+      </li>
+      <% end %>
+    </ul>
+</div>
+
+<div class="col-md-4">
+  <h3>by genre</h3>
+    <ul class="list-group">
+      <% @tvshows.each do |tvshow| %>
+      <li class="list-group-item">
+        <span class="badge">Reviews: <%= tvshow.tv_show_reviews.count %></span>
+        <%= link_to "#{tvshow.title} | #{tvshow.genre}", tv_show_path(tvshow) %>
+      </li>
+      <% end %>
+    </ul>
+</div>
