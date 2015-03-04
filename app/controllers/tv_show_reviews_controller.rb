@@ -13,6 +13,7 @@ class TvShowReviewsController < ApplicationController
     @tvshowreview = TvShowReview.new(tvshowreview_params)
     @tvshow = TvShow.find(params[:tv_show_id])
     @tvshowreview.tv_show_id = params[:tv_show_id]
+    @tvshowreview.user_id = current_user.id
     @tvshowreview.save
     if @tvshowreview.save
       flash[:notice] = "Review successfully created."
