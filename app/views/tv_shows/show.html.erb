@@ -11,7 +11,7 @@
 <p><%= link_to 'Create Review', new_tv_show_tv_show_review_path(@tvshow), class: 'btn btn-success' %>
 
   <div class="col-md-8 pull-right">
-    <% @tvreviews.each do |tvreview| %>
+    <% @tvreviews.sort_by(&:id).reverse.each do |tvreview| %>
       <div class="col-md-6">
         <div class="panel panel-primary">
           <div class="panel-heading">
