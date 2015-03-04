@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150303205918) do
+ActiveRecord::Schema.define(version: 20150304184101) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -30,11 +30,12 @@ ActiveRecord::Schema.define(version: 20150303205918) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.string "username"
-    t.string "password_digest"
-    t.string "bio"
-    t.string "email"
-    t.string "avatar"
+    t.string  "username"
+    t.string  "password_digest"
+    t.string  "bio"
+    t.string  "email"
+    t.string  "avatar"
+    t.boolean "admin",           default: false
   end
 
   add_foreign_key "tv_show_reviews", "tv_shows"
