@@ -1,5 +1,5 @@
 class TvShowReviewsController < ApplicationController
-
+  before_action :authenticate, except: [:index, :show]
   before_action :authenticate_admin, only: [:edit, :update, :destroy]
 
   def index
