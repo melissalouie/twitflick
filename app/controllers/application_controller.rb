@@ -14,7 +14,7 @@ class ApplicationController < ActionController::Base
   end
 
   def authenticate_admin
-    redirect_to root_url, :notice => 'You must be an admin to do that. condolences' unless current_user.admin == true
+    redirect_to root_url, :alert => 'You must be an admin to do that. Condolences. :-(' unless current_user.admin == true
   end
 
 end

@@ -13,7 +13,7 @@
   <div class="navbar navbar-default navbar-fixed-top">
      <div class="container">
        <div class="navbar-header">
-         <a class="navbar-brand" href="/">TwitFlick</a>
+         <a class="navbar-brand" href="/"><span class="glyphicon glyphicon-film" aria-hidden="true" style="gright: 10px;"></span>TwitFlick</a>
        </div>
        <ul class="nav navbar-nav">
          <li class="active"><a href="/tv_shows">TV Shows</a></li>
@@ -31,9 +31,13 @@
      </div>
    </div>
 
-    <% if notice %>
-    <%= notice %>
-    <% end %>
+   <% flash.each do |type, message| %>
+  <% if type == "notice" %>
+  <div class="alert alert-success"><b><center><%= message %></b></center></div>
+  <% elsif type == "alert" %>
+  <div class="alert alert-danger"><b><center><%= message %></b></center></div>
+  <% end %>
+  <% end %>
 
     <%= yield %>
   </div>
