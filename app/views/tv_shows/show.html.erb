@@ -1,27 +1,31 @@
 <div class="header">
-  <div class="pull-right">
-    <%= link_to 'Edit Show', edit_tv_show_path(@tvshow), class: 'btn btn-primary' %>
-    <%= link_to 'Delete Show', tv_show_path(@tvshow), method: :delete, class: 'btn btn-danger' %><p>
-  </div>
-    <h1><b><%= @tvshow.title %></b></h1>
-    <h3><p><%= @tvshow.genre.name %></h3>
-</div>
 
-
-<p><%= link_to 'Create Review', new_tv_show_tv_show_review_path(@tvshow), class: 'btn btn-success' %>
-
-  <div class="col-md-8 pull-right">
-    <% @tvreviews.sort_by(&:id).reverse.each do |tvreview| %>
-      <div class="col-md-6">
-        <div class="panel panel-primary">
-          <div class="panel-heading">
-            <h3 class="panel-title"><%= tvreview.tv_show.title %></h3>
-          </div>
-          <div class="panel-body">
-            <%= tvreview.review %>
-            <p><em>-<%= tvreview.user.username %></em>
-          </div>
-        </div>
+   <div class="pull-right">
+      <%= link_to 'Back to Shows', tv_shows_path, class: 'btn btn-info' %>
+      <%= link_to 'Edit Show', edit_tv_show_path(@tvshow), class: 'btn btn-primary' %>
+      <%= link_to 'Delete Show', tv_show_path(@tvshow), method: :delete, class: 'btn btn-danger' %><p>
       </div>
-    <% end %>
-  </div>
+
+
+      <h1><b><%= @tvshow.title %></b></h1>
+      <h3><p><%= @tvshow.genre %></h3>
+      </div>
+
+
+      <p><%= link_to 'Create Review', new_tv_show_tv_show_review_path(@tvshow), class: 'btn btn-success' %>
+
+         <div class="col-md-8 pull-right">
+            <% @tvreviews.sort_by(&:id).reverse.each do |tvreview| %>
+            <div class="col-md-6">
+               <div class="panel panel-primary">
+                  <div class="panel-heading">
+                     <h3 class="panel-title"><%= tvreview.tv_show.title %></h3>
+                  </div>
+                  <div class="panel-body">
+                     <%= tvreview.review %>
+                     <p><em>-<%= tvreview.user.username %></em>
+                     </div>
+                  </div>
+               </div>
+               <% end %>
+            </div>
