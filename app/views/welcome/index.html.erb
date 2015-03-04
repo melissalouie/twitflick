@@ -4,7 +4,7 @@
     <ul class="list-group">
       <% @tvshows.each do |tvshow| %>
       <li class="list-group-item">
-        <span class="badge">Reviews:<%= tvshow.tv_show_reviews.count %></span>
+        <span class="badge">Reviews: <%= tvshow.tv_show_reviews.count %></span>
         <%= link_to "#{tvshow.title} | #{tvshow.genre}", tv_show_path(tvshow) %>
       </li>
       <% end %>
@@ -20,7 +20,7 @@
         </div>
         <div class="panel-body">
           <%= tvreview.review %>
-          <!--tvreview.user.username  -->
+          <!-- tvreview.user.username  -->
         </div>
       </div>
     </div>
