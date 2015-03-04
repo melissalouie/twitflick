@@ -1,4 +1,7 @@
 class TvShowReviewsController < ApplicationController
+
+  before_action :authenticate_admin, only: [:edit, :update, :destroy]
+
   def index
     @tvshow = TvShow.find(params[:tv_show_id])
     @tvshowreviews = @tvshow.tv_show_reviews

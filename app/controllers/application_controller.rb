@@ -12,5 +12,9 @@ class ApplicationController < ActionController::Base
   def authenticate
     redirect_to login_path, :alert => 'You must be logged in to visit that page.' unless current_user
   end
-  
+
+  def authenticate_admin
+    redirect_to root_url, :notice => 'You must be an admin to do that. condolences' unless current_user.admin == true
+  end
+
 end
