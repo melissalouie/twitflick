@@ -1,7 +1,27 @@
-<%= form_for [@tvshow, @tvshowreview] do |f| %>
-  <%= f.label :review %>
-  <%= f.text_field :review %>
-  <%= f.label :rating %>
-  <%= f.number_field :rating %>
-  <%= f.submit %>
+<%= form_for [@tvshow, @tvshowreview], html: {:class => "form-horizontal"} do |f| %>
+
+<div class="form-group">
+  <div class="field">
+    <%= f.label :review, :class => 'control-label col-md-2' %>
+    <div class='form-controls col-md-4'>
+      <%= f.text_field :review, :class => 'form-control' %>
+    </div>
+  </div>
+</div>
+
+<div class="form-group">
+  <div class="field">
+    <%= f.label :rating, :class => 'control-label col-md-2' %>
+    <div class='form-controls col-md-4'>
+      <%= f.number_field :rating, :class => 'form-control' %>
+    </div>
+  </div>
+</div>
+
+<div class="form-group">
+  <div class="col-md-offset-2 col-md-4">
+    <%= f.submit :class => 'btn btn-primary' %>
+    <%= link_to 'cancel', tv_show_path(@tvshow), class: 'btn btn-default'%>
+  </div>
+</div>
 <% end %>

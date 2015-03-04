@@ -20,7 +20,7 @@ class TvShowReviewsController < ApplicationController
     @tvshowreview.save
     if @tvshowreview.save
       flash[:notice] = "Review successfully created."
-      redirect_to tv_show_tv_show_review_path(@tvshow, @tvshowreview)
+      redirect_to tv_show_path(@tvshow)
     else
       render :new
     end
