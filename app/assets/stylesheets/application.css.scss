@@ -17,6 +17,7 @@
  @import "bootstrap-sprockets";
  @import "bootstrap";
 
+
  body { padding-top: 60px; }
 
  @import url("//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700");
@@ -43,6 +44,11 @@ html {
   background-color: black !important;
 
 }
+
+#avatar{
+  height: 70px;
+}
+
 #new-show {
   margin-top: 15px;
 }
