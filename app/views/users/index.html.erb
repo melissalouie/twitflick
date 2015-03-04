@@ -3,29 +3,30 @@
     <h1>Reviewers</h1>
   </div>
   <% @users.each do |user| %>
-    <div class="col-md-4">
+  <div class="col-md-4">
     <div class="panel panel-primary">
       <div class="panel-heading">
         <p class="pull-right"><%= user.likes %></p>
         <%= link_to add_like_path(user) do %>
-          <i class="fa fa-heart pull-right"></i>
+        <i class="fa fa-heart pull-right"></i>
         <% end %>
         <%=  link_to user_path(user) do %>
-          <i class="fa fa-user pull-right"></i>
+        <i class="fa fa-user pull-right"></i>
         <% end %>
         <h3 class="panel-title"><strong><%= user.username %></strong></h3>
       </div>
       <div class="panel-body">
-        <div class="col-md-4">
-          <%= image_tag user.avatar_url, id: 'avatar' %>
+        <div class="row">
+          <div class="col-md-4">
+            <%= image_tag(user.avatar_url, class: 'thumbnail', id: 'avatar') %>
+          </div>
+          <div class="col-md-8 text-center">
+            <p><i><%= user.bio %></i></p>
+          </div>
         </div>
-        <div class="col-md-8 text-center">
-          <p><i><%= user.bio %></i></p>
-        </div>
-        </div>
+      </div>
     </div>
+    <% end %>
+
+
   </div>
-  <% end %>
-
-
-</div>
