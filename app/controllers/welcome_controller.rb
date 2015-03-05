@@ -2,7 +2,7 @@ class WelcomeController < ApplicationController
 
   def index
     @tvshows = TvShow.all
-    @tvreviews = TvShowReview.all
+    @tvreviews = TvShowReview.order('id DESC').limit(10)
   end
 
 end
