@@ -7,7 +7,12 @@ class ApplicationController < ActionController::Base
     User.find_by_id(session[:user_id])
   end
 
+  def other_users
+    User.where.not(id: session[:user_id])
+  end
+
   helper_method :current_user
+  helper_method :other_users
 
   def authenticate
     redirect_to login_path, :alert => 'You must be logged in to visit that page.' unless current_user
