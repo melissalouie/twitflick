@@ -5,6 +5,8 @@ Rails.application.routes.draw do
     resources :tv_show_reviews
   end
 
+  resources :genres, only: :show
+
   resources :users
   get 'users/:id/add_like' => 'users#add_like', :as => 'add_like'
 

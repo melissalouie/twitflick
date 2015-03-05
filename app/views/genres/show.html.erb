@@ -1,27 +1,15 @@
 <div class="header">
-  <h1>TV Shows</h1>
+  <h1> <%= @genre.name %> </h1>
 </div>
 <p><%= link_to 'New Show', new_tv_show_path, class: 'btn btn-default btn-small', id: 'new-show' %>
 
 <div class="col-md-4">
-  <h3>by show</h3>
+  <h3>shows</h3>
     <ul class="list-group">
       <% @tvshows.each do |tvshow| %>
       <li class="list-group-item">
         <span class="badge">Reviews: <%= tvshow.tv_show_reviews.count %></span>
         <%= link_to "#{tvshow.title}", tv_show_path(tvshow) %>
-      </li>
-      <% end %>
-    </ul>
-</div>
-
-<div class="col-md-4">
-  <h3>by genre</h3>
-    <ul class="list-group">
-      <% @genres.each do |genre| %>
-      <li class="list-group-item">
-        <span class="badge">Shows: <%= genre.tv_shows.count %></span>
-        <%= link_to "#{genre.name}", genre_path(genre) %>
       </li>
       <% end %>
     </ul>
