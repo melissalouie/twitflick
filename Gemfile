@@ -36,6 +36,8 @@ gem 'carrierwave'
 # gem 'capistrano-rails', group: :development
 
 group :development, :test do
+  gem "pry-rails"
+  gem "pry-byebug"
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
 

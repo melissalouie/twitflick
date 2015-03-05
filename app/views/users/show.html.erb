@@ -10,9 +10,14 @@
   <div class="col-md-8">
     <h3><%= @user.bio %></h3>
       Likes <%= link_to add_like_path(@user) do %><i class="fa fa-heart"></i><% end %> <%=@user.likes %>
-    </div>
-</div>
 
+        <% unless followed(@user) %>
+          <p><%= link_to "Follow", user_follows_path(@user), method: :post %>
+        <% else %>
+          <p><%= link_to "Unfollow", user_follow_path(@user, @follow), method: :delete %>
+        <% end  %>
+  </div>
+</div>
 
 <div class="row">
 
