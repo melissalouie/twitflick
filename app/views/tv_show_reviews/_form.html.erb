@@ -1,5 +1,16 @@
 <%= form_for [@tvshow, @tvshowreview], html: {:class => "form-horizontal"} do |f| %>
 
+  <% if @tvshowreview.errors.any? %>
+  <div id="error_explanation" class="alert alert-danger">
+    <h2><%= pluralize(@tvshowreview.errors.count, "error") %> prohibited this TV show review from being saved:</h2>
+    <ul>
+      <% @tvshowreview.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
+  <% end %>
+
 <div class="form-group">
   <div class="field">
     <%= f.label :review, :class => 'control-label col-md-2' %>
