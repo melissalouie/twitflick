@@ -1,5 +1,5 @@
 class TvShowReviewsController < ApplicationController
-  before_action :authenticate, except: [:index, :show]
+  before_action :authenticate, except: [:index]
 
   def index
     @tvshow = TvShow.find(params[:tv_show_id])

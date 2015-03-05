@@ -2,9 +2,9 @@
 
    <div class="pull-right">
       <%= link_to 'Back to Shows', tv_shows_path, class: 'btn btn-info' %>
-      <% if current_user.admin == true %>
+      <% if current_user == nil || current_user.admin == true %>
         <%= link_to 'Edit Show', edit_tv_show_path(@tvshow), class: 'btn btn-primary' %>
-        <%= link_to 'Delete Show', tv_show_path(@tvshow), method: :delete, class: 'btn btn-danger' %><p>
+        <%= link_to 'Delete Show', tv_show_path(@tvshow), method: :delete, class: 'btn btn-danger' %>
       <% end %>
       </div>
 
