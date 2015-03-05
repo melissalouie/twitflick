@@ -5,7 +5,10 @@ Rails.application.routes.draw do
     resources :tv_show_reviews
   end
 
-  resources :users
+  resources :users do
+    resources :follows
+  end
+
   get 'users/:id/add_like' => 'users#add_like', :as => 'add_like'
 
   get '/login' => 'sessions#new', as: :login
