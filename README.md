@@ -1,5 +1,7 @@
 <h1>TwitFlick</h1>
 
+[![Build Status](https://travis-ci.org/melissalouie/twitflick.svg)](https://travis-ci.org/melissalouie/twitflick)
+
 <h3>README</h3>
 
 * Ruby version
