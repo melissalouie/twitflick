@@ -5,8 +5,9 @@ class WelcomeController < ApplicationController
     if current_user
       @tvreviews = current_user.active_relationships.map {|follow| follow.followee.tv_show_reviews }.flatten
     else
-      @tvreviews = TvShowReview.all
+      @tvreviews = TvShowReview.order('id DESC').limit(10)
     end
+
   end
 
 end
