@@ -1,0 +1,40 @@
+<div class="header">
+  <h1> <%= @genre.name %> </h1>
+</div>
+<p><%= link_to 'New Show', new_tv_show_path, class: 'btn btn-default btn-small', id: 'new-show' %>
+
+<div class="col-md-4">
+  <h3>shows</h3>
+    <ul class="list-group">
+      <% @tv_shows.each do |tvshow| %>
+      <li class="list-group-item">
+        <span class="badge">Reviews: <%= tvshow.tv_show_reviews.count %></span>
+        <%= link_to "#{tvshow.title}", tv_show_path(tvshow) %>
+      </li>
+      <% end %>
+    </ul>
+</div>
+
+<div class="col-md-8">
+  <% @tv_shows.each do |tvshow| %>
+  <% tvshow.tv_show_reviews.each do |tvreview| %>
+    <div class="col-md-6">
+      <div class="panel panel-primary">
+        <div class="panel-heading">
+          <h3 class="panel-title"><%= tvreview.tv_show.title %>
+            <% tvreview.rating.times do %>
+            <div class="pull-right">
+              <span class="glyphicon glyphicon-star" aria-hidden="true" style="padding-right: 6px; left: 10px"></span>
+              <% end %>
+            </div>
+          </h3>
+        </div>
+        <div class="panel-body">
+          <%= tvreview.review %>
+          <p><em>-<%= tvreview.user.username %></em>
+        </div>
+      </div>
+    </div>
+    <% end %>
+  <% end %>
+</div>

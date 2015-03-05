@@ -5,6 +5,8 @@ Rails.application.routes.draw do
     resources :tv_show_reviews
   end
 
+  resources :genres, only: :show
+
   resources :users do
     resources :follows
   end

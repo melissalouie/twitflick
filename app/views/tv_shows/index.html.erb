@@ -21,7 +21,7 @@
       <% @genres.each do |genre| %>
       <li class="list-group-item">
         <span class="badge">Shows: <%= genre.tv_shows.count %></span>
-        <%= "#{genre.name}" %>
+        <%= link_to "#{genre.name}", genre_path(genre) %>
       </li>
       <% end %>
     </ul>
