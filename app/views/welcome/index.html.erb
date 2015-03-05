@@ -12,6 +12,11 @@
 </div>
 
 <div class="col-md-8">
+  <% if current_user %>
+    <h3>Recent Reviews from Users You Follow</h3>
+  <% else %>
+    <h3>Recent Reviews</h3>
+  <% end %>
   <% @tvreviews.each do |tvreview| %>
     <div class="col-md-6">
       <div class="panel panel-primary">
