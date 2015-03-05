@@ -13,7 +13,7 @@ class FollowsController < ApplicationController
   end
 
   def create
-    @follow = Follow.create!({follower_id: current_user.id, followee_id: params[:user_id]})
+    @follow = Follow.new({follower_id: current_user.id, followee_id: params[:user_id]})
     if @follow.save
       redirect_to :back
     else
