@@ -1,6 +1,5 @@
 class TvShowReviewsController < ApplicationController
   before_action :authenticate, except: [:index, :show]
-  before_action :authenticate_admin, only: [:edit, :update, :destroy]
 
   def index
     @tvshow = TvShow.find(params[:tv_show_id])
@@ -39,11 +38,14 @@ class TvShowReviewsController < ApplicationController
   def update
     @tvshow = TvShow.find(params[:tv_show_id])
     @tvshowreview = TvShowReview.find(params[:id])
-    @tvshowreview.tv_show_id = params[:tv_show_id]
-    if @tvshowreview.update(tvshowreview_params)
-      redirect_to tv_show_tv_show_review_path(@tvshow, @tvshowreview)
+    if current_user.id == @tvshowreview.user_id || current_user.admin == true
+      @tvshowreview.tv_show_id = params[:tv_show_id]
+      @tvshowreview.update(tvshowreview_params)
+        redirect_to tv_show_tv_show_review_path(@tvshow, @tvshowreview)
     else
+      flash[:alert] = "You are not authorized to edit this review."
       render :edit
+
     end
   end
 
