@@ -16,7 +16,13 @@
     <div class="col-md-6">
       <div class="panel panel-primary">
         <div class="panel-heading">
-          <h3 class="panel-title"><%= tvreview.tv_show.title %></h3>
+          <h3 class="panel-title"><%= tvreview.tv_show.title %>
+            <% tvreview.rating.times do %>
+            <div class="pull-right">
+              <span class="glyphicon glyphicon-star" aria-hidden="true" style="left: 10px;"></span>
+              <% end %>
+            </div>
+          </h3>
         </div>
         <div class="panel-body">
           <%= tvreview.review %>
