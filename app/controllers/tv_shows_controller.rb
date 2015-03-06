@@ -24,7 +24,8 @@ class TvShowsController < ApplicationController
   def show
     @tvshow = TvShow.find(params[:id])
     @tvreviews = @tvshow.tv_show_reviews.sort_by(&:id).reverse
-    @tvshowreview = TvShowReview.find(params[:id])
+    # binding.pry
+    # @tvshowreview = TvShowReview.find(params[:id])
   end
 
   def edit

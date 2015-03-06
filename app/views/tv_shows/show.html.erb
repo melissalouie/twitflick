@@ -34,7 +34,7 @@
                      <p><em>-<%= tvreview.user.username %></em>
                        <% if current_user.id == tvreview.user_id || current_user.admin == true %>
                        <p><%= link_to 'Edit', edit_tv_show_tv_show_review_path(@tvshow, tvreview) %>
-                       <%= link_to 'Delete', tv_show_tv_show_review_path(@tvshow, @tvshowreview), method: :delete %>
+                       <%= link_to 'Delete', tv_show_tv_show_review_path(@tvshow, tvreview), method: :delete %>
                        <% end %>
                      </div>
                   </div>
