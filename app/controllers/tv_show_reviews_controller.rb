@@ -41,7 +41,7 @@ class TvShowReviewsController < ApplicationController
     if current_user.id == @tvshowreview.user_id || current_user.admin == true
       @tvshowreview.tv_show_id = params[:tv_show_id]
       @tvshowreview.update(tvshowreview_params)
-        redirect_to tv_show_tv_show_review_path(@tvshow, @tvshowreview)
+        redirect_to tv_show_path(@tvshow)
     else
       flash[:alert] = "You are not authorized to edit this review."
       render :edit
@@ -53,7 +53,7 @@ class TvShowReviewsController < ApplicationController
     @tvshow = TvShow.find(params[:tv_show_id])
     @tvshowreview = TvShowReview.find(params[:id])
     @tvshowreview.destroy
-    redirect_to tv_show_tv_show_reviews_path(@tvshow)
+    redirect_to tv_show_path(@tvshow)
   end
 
   private

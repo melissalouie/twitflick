@@ -1,5 +1,5 @@
 class TvShowsController < ApplicationController
-  before_action :authenticate, except: [:index, :show]
+  before_action :authenticate, except: [:index]
   before_action :authenticate_admin, only: [:edit, :update, :destroy]
 
   def index
@@ -24,6 +24,7 @@ class TvShowsController < ApplicationController
   def show
     @tvshow = TvShow.find(params[:id])
     @tvreviews = @tvshow.tv_show_reviews.sort_by(&:id).reverse
+    @tvshowreview = TvShowReview.find(params[:id])
   end
 
   def edit
