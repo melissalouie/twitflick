@@ -12,6 +12,6 @@
   -rake db:create db:migrate db:seed
   -rails s
 
-* Heroku URL: https://intense-wildwood-9966.herokuapp.com
+* Heroku URL: http://twitflick.herokuapp.com/
 
 * Created by Casey Kelly, Melissa Louie, Melissa Khat, Kenneth To, Pete Vliet
